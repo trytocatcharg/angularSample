@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MainModel } from '../models/mainModel';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'trytocatch app';
+  model = new MainModel("Prueba");
 }
