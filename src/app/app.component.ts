@@ -9,4 +9,7 @@ import { MainModel } from '../models/mainModel';
 export class AppComponent {
   title = 'trytocatch app';
   model = new MainModel("Prueba");
+  today: number = Date.now();
+  todayDate: any = Date.now();
+  
 }
