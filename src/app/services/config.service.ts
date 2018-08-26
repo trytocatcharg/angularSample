@@ -23,9 +23,6 @@ export class ConfigValues{
 
     getAllValues():Observable<any>{
         let headers = new Headers({'Content-type': 'application/json'});
-        headers.append('Access-Control-Allow-Headers', 'Content-Type');
-        headers.append('Access-Control-Allow-Methods', 'GET');
-        headers.append('Access-Control-Allow-Origin', AppCommon.urlAPI+"/*");
         let options = new RequestOptions({headers: headers});
         return this.http.get(`${AppCommon.urlAPI}/api/config/list`,options)
                     .map(this.mappData)
@@ -34,9 +31,6 @@ export class ConfigValues{
 
     getValue(name):Observable<any>{
         let headers = new Headers({'Content-type': 'application/json'});
-        headers.append('Access-Control-Allow-Headers', 'Content-Type');
-        headers.append('Access-Control-Allow-Methods', 'GET');
-        headers.append('Access-Control-Allow-Origin', '*');
         let options = new RequestOptions({headers: headers});
         return this.http.get(`${AppCommon.urlAPI}/api/config/getByName/${name}`,options)
                     .map(this.mappData)

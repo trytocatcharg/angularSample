@@ -10,20 +10,35 @@ import { HttpModule } from '@angular/http';
 import { AppCommon } from './shared/common';
 import { TradesService } from './services/trade.service';
 import { SummaryComponent } from './summary/summary.component';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule, MatInputModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DateComponent } from './date/date.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatCardModule } from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeekPipe,
-    SummaryComponent
+    SummaryComponent,
+    DateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     RouterModule,
-    HttpModule
+    HttpModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule,
+    MatCardModule
+    
   ],
   providers: [ConfigValues,AppCommon,TradesService],
   bootstrap: [AppComponent]

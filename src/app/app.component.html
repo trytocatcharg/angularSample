@@ -22,8 +22,11 @@
     </div>
   </nav>
 <br/>
+<app-date [dateSelected]='dateInitial'
+          (notifyDate)='onNotifyDate($event)'></app-date>
+<br/>
 
-<app-summary [dateInputWeek]='this.dateInitial'></app-summary>
+<app-summary [dateInputWeek]='dateInitial'></app-summary>
 
 {{model | json }}
 <!-- <div class="row">

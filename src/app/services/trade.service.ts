@@ -51,9 +51,7 @@ export class TradesService{
 
     getSummaryWeek(date:string):Observable<any>{
         let headers = new Headers({'Content-type': 'application/json'});
-        headers.append('Access-Control-Allow-Headers', 'Content-Type');
-        headers.append('Access-Control-Allow-Methods', 'GET');
-        headers.append('Access-Control-Allow-Origin', '*');
+
         let options = new RequestOptions({headers: headers});
         console.log(`${AppCommon.urlAPI}/api/trade/getByWeek/${date}`);
         return this.http.get(`${AppCommon.urlAPI}/api/trade/getByWeek/${date}`,options)
