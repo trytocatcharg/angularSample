@@ -17,13 +17,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DateComponent } from './date/date.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material';
+import { ChartsModule } from 'ng2-charts'
+import { PieChartComponent } from './pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeekPipe,
     SummaryComponent,
-    DateComponent
+    DateComponent,
+    PieChartComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,9 @@ import { MatCardModule } from '@angular/material';
     MatInputModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
-    MatCardModule
+    MatCardModule,
+    ChartsModule
+    
     
   ],
   providers: [ConfigValues,AppCommon,TradesService],

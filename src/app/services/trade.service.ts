@@ -3,10 +3,26 @@ import {Http } from '@angular/http';
 import {Response, Headers, RequestOptions} from '@angular/http'
 import 'rxjs/Rx';
 import {Observable} from 'rxjs/Observable';
-import { AppCommon } from '../shared/common'
+import { AppCommon } from '../shared/common';
 
 @Injectable()
 export class TradesService{
+    mappDataComplete(res: Response): any {
+        let body= res.json();
+        let positive = 0;
+        let negative = 0;
+        
+        body.forEach(element => {
+                if(element.result=='OK'){
+                positive=positive+1;
+                }else{
+                    negative=negative+1;
+                }
+        });
+        var newJson={total:Object.keys(body).length,positive:positive,negative:negative};
+        return newJson;
+       
+    }
     handlerError(error: any) {
         console.log(error);
         return Observable.throw(error.statusText);
@@ -48,10 +64,19 @@ export class TradesService{
 
     }
 
-
-    getSummaryWeek(date:string):Observable<any>{
+    
+    //Obtiene el resumen total de los trades
+    getSummaryComplete():Observable<any>{
         let headers = new Headers({'Content-type': 'application/json'});
+        let options = new RequestOptions({headers: headers});
+        return this.http.get(`${AppCommon.urlAPI}/api/trade/all`,options)
+                    .map(this.mappDataComplete)
+                    .catch(this.handlerError);
+    }
 
+
+   getSummaryWeek(date:string):Observable<any>{
+        let headers = new Headers({'Content-type': 'application/json'});
         let options = new RequestOptions({headers: headers});
         console.log(`${AppCommon.urlAPI}/api/trade/getByWeek/${date}`);
         return this.http.get(`${AppCommon.urlAPI}/api/trade/getByWeek/${date}`,options)

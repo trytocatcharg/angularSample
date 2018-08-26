@@ -11,7 +11,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class AppComponent {
   title = 'trytocatch app';
   model;
-  dateInitial:string ="2018-06-27";
+  dateInitial:string =moment(Date.now()).format("YYYY-MM-DD");;
 
 
   onNotifyDate(date: string): void {

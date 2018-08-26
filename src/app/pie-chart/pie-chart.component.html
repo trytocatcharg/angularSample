@@ -1,0 +1,28 @@
+
+<div class="card bg-dark text-white">
+    <h5 class="card-header">Porcentaje de trades</h5>
+    <div class="card-body">
+            <div class="d-flex justify-content-center" *ngIf="this.progressVisible">
+              <mat-progress-spinner style="width: 30px;  height: 30px;" 
+                  class="example-margin"
+                  [color]="color"
+                  [mode]="mode">
+              </mat-progress-spinner>
+          </div>
+              <div style="display: block;" *ngIf="!this.progressVisible">
+                  <canvas baseChart
+                          [data]="this.pieChartData"
+                          [labels]="this.pieChartLabels"
+                          [chartType]="this.pieChartType"
+                          (chartHover)="chartHovered($event)"
+                          (chartClick)="chartClicked($event)"></canvas>
+                </div>
+    </div>
+</div>
+
+
+
+   
+   
+
+      

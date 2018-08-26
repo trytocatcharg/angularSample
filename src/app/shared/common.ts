@@ -6,6 +6,12 @@ export class AppCommon {
     public static urlAPI= "https://sheltered-bastion-23570.herokuapp.com";
     //public static urlAPI= "http://localhost:1234";
 
+
+      //Para la progress bar
+    static colorProgressBar=function(){return "primary";}
+    static modeProgressBar=function(){return 'indeterminate';}
+
+
      // source: http://stackoverflow.com/questions/6117814/get-week-of-year-in-javascript-like-in-php
      public static getWeekNumber(d: Date): number {
         // Copy date so don't modify original
