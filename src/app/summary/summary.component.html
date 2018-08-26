@@ -3,13 +3,15 @@
     <div class="card bg-dark text-white">
       <h5 class="card-header">Resumen semana {{this.weekSelected}}</h5>
       <div class="card-body">
-
-        <div class="row">
-            <mat-progress-spinner style="width: 30px;  height: 30px;" *ngIf="this.progressVisible"
+          <div class="d-flex justify-content-center" *ngIf="this.progressVisible">
+            <mat-progress-spinner style="width: 30px;  height: 30px;" 
                 class="example-margin"
                 [color]="color"
                 [mode]="mode">
             </mat-progress-spinner>
+        </div>
+        <div class="row" *ngIf="!this.progressVisible">
+
             <div class="col-sm">
                 <div class="form-group">
                     <label for="lbl-objWeek">Ptos semanales:</label>

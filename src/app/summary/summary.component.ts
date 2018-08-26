@@ -44,9 +44,8 @@ export class SummaryComponent implements OnInit {
     //Uno las 2 peticiones en un solo observable
     //https://coryrylan.com/blog/angular-multiple-http-requests-with-rxjs
     forkJoin([configHttpCall, tradeHttpCall])
-      .delay(2000)
+      .delay(1000)
       .subscribe(data => {
-              console.log("success json",data[0]);
               this.objetiveWeek=data[0].find(s => s.name === AppCommon.OBJ_SEMANAL).value;
               this.maxOperationByWeek=data[0].find(s => s.name === AppCommon.MOS).value;
               
