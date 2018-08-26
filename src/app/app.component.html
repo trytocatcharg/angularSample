@@ -15,37 +15,37 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Add</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
+        </li> -->
       </ul>
     </div>
   </nav>
-<!--The content below is only a placeholder and can be replaced.-->
-<div class="container-fluid">
+<br/>
+
+<app-summary [dateInputWeek]='this.dateInitial'></app-summary>
+
+{{model | json }}
+<!-- <div class="row">
   <div class="container-fluid">
-      <div class="row">
-          <div class="col-sm-12">
-          <form #form="ngForm">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+           
             
-            <input #firstName="ngModel" type="text" required name="firstName" [(ngModel)]="model.firstName"/>
+            {{model | json }}
 
-            <div class="alert alert-danger" *ngIf="firstName.invalid && firstName.dirty" >
-              <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
-            </div>
-          </form>
-          
-          {{model | json }}
-
-          <br/>
-          Week of the year
-          <div class="week-number">
-            week {{today | week }} 
             <br/>
-            date {{todayDate | date: 'dd/MM/yyyy'}}
+            Week of the year
+            <div class="week-number">
+              week {{today | week }} 
+              <br/>
+              date {{todayDate | date: 'dd/MM/yyyy'}}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-</div>
+  </div>
+</div> -->
+
 <router-outlet></router-outlet>
