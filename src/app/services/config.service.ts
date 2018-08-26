@@ -25,7 +25,7 @@ export class ConfigValues{
         let headers = new Headers({'Content-type': 'application/json'});
         headers.append('Access-Control-Allow-Headers', 'Content-Type');
         headers.append('Access-Control-Allow-Methods', 'GET');
-        headers.append('Access-Control-Allow-Origin', '*');
+        headers.append('Access-Control-Allow-Origin', AppCommon.urlAPI+"/*");
         let options = new RequestOptions({headers: headers});
         return this.http.get(`${AppCommon.urlAPI}/api/config/list`,options)
                     .map(this.mappData)
