@@ -22,33 +22,37 @@
     </div>
   </nav>
 <br/>
-<app-date [dateSelected]='dateInitial'
-          (notifyDate)='onNotifyDate($event)'></app-date>
-<br/>
 
-<app-summary [dateInputWeek]='dateInitial'></app-summary>
+
+<div class="container-fluid">
+
+     
+    <div class="card">
+
+        <div class="card bg-dark text-white">
+           <app-date [dateSelected]='dateInitial' (notifyDate)='onNotifyDate($event)'></app-date>
+         </div>
+       </div>
+
+  <div id="accordion">
+    <div class="card">
+      <div class="card bg-dark text-white">
+        <app-summary [dateInputWeek]='dateInitial'></app-summary>
+    </div>
+    </div>
+
+
+    
+    <div class="card">
+        <div class="card bg-dark text-white">
+          <app-pie-chart></app-pie-chart>
+      </div>
+      </div>
+  
+  
+   </div>
+</div>
 
 {{model | json }}
-<!-- <div class="row">
-  <div class="container-fluid">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-           
-            
-            {{model | json }}
-
-            <br/>
-            Week of the year
-            <div class="week-number">
-              week {{today | week }} 
-              <br/>
-              date {{todayDate | date: 'dd/MM/yyyy'}}
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
-</div> -->
 
 <router-outlet></router-outlet>

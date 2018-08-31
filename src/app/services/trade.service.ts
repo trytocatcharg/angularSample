@@ -69,7 +69,7 @@ export class TradesService{
     getSummaryComplete():Observable<any>{
         let headers = new Headers({'Content-type': 'application/json'});
         let options = new RequestOptions({headers: headers});
-        return this.http.get(`${AppCommon.urlAPI}/api/trade/all`,options)
+        return this.http.get(`${AppCommon.urlAPI}/api/trade/`,options)
                     .map(this.mappDataComplete)
                     .catch(this.handlerError);
     }

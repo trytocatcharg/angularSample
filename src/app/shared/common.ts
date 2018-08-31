@@ -3,8 +3,8 @@ export class AppCommon {
     public static VAMAPAXO="VAMAPAXO";
     public static MOS="MOS";
     public static MARSE="MARSE";
-    public static urlAPI= "https://sheltered-bastion-23570.herokuapp.com";
-    //public static urlAPI= "http://localhost:1234";
+    //public static urlAPI= "https://sheltered-bastion-23570.herokuapp.com";
+    public static urlAPI= "http://localhost:1234";
 
 
       //Para la progress bar

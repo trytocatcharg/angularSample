@@ -1,26 +1,27 @@
 <form>
-<div class="container-fluid">
-    <div class="card bg-dark text-white">
-      <h5 class="card-header">Fecha</h5>
-      <div class="card-body">
-        <div class="row">
-            <div class="col-sm">
-                <div class="form-group">
-                   
-                    <mat-form-field>
-                        <input matInput [matDatepicker]="picker" 
-                          placeholder="seleccione una fecha" name="dateFormat" [ngModel]="this.dateFormat" (ngModelChange)="onChange($event)" >
-                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
-                    </mat-form-field>
+        <div class="card-header">
+            <a class="card-link" data-toggle="collapse" href="#collapseOne">
+              Fecha
+            </a>
+          </div>
+          <div id="collapseOne" class="collapse show" data-parent="#accordion">
+            <div class="card-body">
+              <div class="row">
+                  <div class="col-sm">
+                      <div class="form-group">
+                        
+                          <mat-form-field>
+                              <input matInput [matDatepicker]="picker" 
+                                placeholder="seleccione una fecha" name="dateFormat" [ngModel]="this.dateFormat" (ngModelChange)="onChange($event)" >
+                              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                              <mat-datepicker #picker></mat-datepicker>
+                          </mat-form-field>
 
 
+                        </div>
                   </div>
+        
             </div>
-  
-      </div>
-    </div>
-  </div>
-</div>
-
+          </div>
+          </div>
 </form>
