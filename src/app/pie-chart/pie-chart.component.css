@@ -1,0 +1,12 @@
+.canvas-center{
+    width: 60%
+
+}
+.min-padding{
+    padding: 0px 5px 0px 5px;
+}
+@media (max-width: 700px) {
+    .canvas-center {
+        width: 100%
+    }
+  }
