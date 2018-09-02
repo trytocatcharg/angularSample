@@ -184,7 +184,7 @@ export class TradesService{
     getSummaryLineChart(year:number):Observable<any>{
         let headers = new Headers({'Content-type': 'application/json'});
         let options = new RequestOptions({headers: headers});
-        return this.http.get(`${AppCommon.urlAPI}/api/trade/`,options)
+        return this.http.get(`${AppCommon.urlAPI}/api/trades?year=${year}`,options)
                     .map(this.mappDataLineChart)
                     .catch(this.handlerError);
         // return this.http.get(`${AppCommon.urlAPI}/api/trade/getByYear/${year}`,options)
@@ -195,7 +195,7 @@ export class TradesService{
     getSummaryComplete():Observable<any>{
         let headers = new Headers({'Content-type': 'application/json'});
         let options = new RequestOptions({headers: headers});
-        return this.http.get(`${AppCommon.urlAPI}/api/trade/`,options)
+        return this.http.get(`${AppCommon.urlAPI}/api/trades/`,options)
                     .map(this.mappDataComplete)
                     .catch(this.handlerError);
     }
@@ -204,8 +204,8 @@ export class TradesService{
    getSummaryWeek(date:string):Observable<any>{
         let headers = new Headers({'Content-type': 'application/json'});
         let options = new RequestOptions({headers: headers});
-        console.log(`${AppCommon.urlAPI}/api/trade/getByWeek/${date}`);
-        return this.http.get(`${AppCommon.urlAPI}/api/trade/getByWeek/${date}`,options)
+        console.log(`${AppCommon.urlAPI}/api/trades?date=/${date}`);
+        return this.http.get(`${AppCommon.urlAPI}/api/trades?date=${date}`,options)
                     .map(this.mappData)
                     .catch(this.handlerError);
     }
